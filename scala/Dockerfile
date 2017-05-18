@@ -4,7 +4,7 @@ MAINTAINER Greg Orzell <chaos@chaossystems.io>
 RUN apt-get update &&\
     apt-get install --no-install-recommends -y apt-transport-https curl software-properties-common make \
     # Circle CI Requirements
-    git openssh gzip ca-certificates &&\
+    git ssh gzip ca-certificates &&\
     # Setup docker repo and install docker.
     curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - &&\
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" &&\
