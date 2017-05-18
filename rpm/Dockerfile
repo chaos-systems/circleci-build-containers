@@ -8,7 +8,7 @@ WORKDIR ${HOME}
 RUN dnf makecache && \
     dnf install -y \
     # Circle CI Requirements
-    git ssh gzip ca-certificates \
+    git openssh openssh-clients gzip ca-certificates \
     # RPM Tools and CLI depdencencies
     curl python-devel python-pip make rpm-build createrepo && \
     dnf clean all
