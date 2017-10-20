@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:9
 MAINTAINER Greg Orzell <chaos@chaossystems.io>
 
 RUN apt-get update &&\
@@ -15,8 +15,8 @@ RUN apt-get update &&\
     apt-get clean && \
     rm -rf /var/lib/apt/lists
 
-RUN curl -Lso sbt-0.13.15.deb https://dl.bintray.com/sbt/debian/sbt-0.13.15.deb &&\
-    dpkg -i sbt-0.13.15.deb &&\
+RUN curl -Lso sbt-1.0.2.deb https://dl.bintray.com/sbt/debian/sbt-1.0.2.deb &&\
+    dpkg -i sbt-1.0.2.deb &&\
     # Download actual sbt files
     sbt update
 

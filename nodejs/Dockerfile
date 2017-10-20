@@ -1,4 +1,4 @@
-FROM node:7
+FROM node:8
 MAINTAINER Greg Orzell <chaos@chaossystems.io>
 
 RUN apt-get update &&\

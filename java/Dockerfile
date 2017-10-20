@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:9
 MAINTAINER Greg Orzell <chaos@chaossystems.io>
 
 RUN apt-get update &&\

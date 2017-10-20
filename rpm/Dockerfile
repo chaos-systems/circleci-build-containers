@@ -1,4 +1,4 @@
-FROM fedora:25
+FROM fedora:26
 MAINTAINER Greg Orzell <chaos@chaossystems.io>
 
 ENV HOME /rpm-build
