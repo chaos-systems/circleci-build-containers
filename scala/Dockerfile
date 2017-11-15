@@ -4,7 +4,10 @@ MAINTAINER Greg Orzell <chaos@chaossystems.io>
 RUN apt-get update &&\
     apt-get install --no-install-recommends -y apt-transport-https curl software-properties-common make \
     # Circle CI Requirements
-    git ssh gzip ca-certificates &&\
+    ca-certificates \
+    git \
+    gzip \
+    ssh && \
     # Setup docker repo and install docker.
     curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - &&\
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" &&\
@@ -15,8 +18,8 @@ RUN apt-get update &&\
     apt-get clean && \
     rm -rf /var/lib/apt/lists
 
-RUN curl -Lso sbt-1.0.2.deb https://dl.bintray.com/sbt/debian/sbt-1.0.2.deb &&\
-    dpkg -i sbt-1.0.2.deb &&\
+RUN curl -Lso sbt-1.0.3.deb https://dl.bintray.com/sbt/debian/sbt-1.0.3.deb &&\
+    dpkg -i sbt-1.0.3.deb &&\
     # Download actual sbt files
     sbt update
 

@@ -1,4 +1,4 @@
-FROM fedora:26
+FROM fedora:27
 MAINTAINER Greg Orzell <chaos@chaossystems.io>
 
 ENV HOME /rpm-build
@@ -8,9 +8,18 @@ WORKDIR ${HOME}
 RUN dnf makecache && \
     dnf install -y \
     # Circle CI Requirements
-    git openssh openssh-clients gzip ca-certificates \
+    ca-certificates \
+    git \
+    gzip \
+    openssh \
+    openssh-clients \
     # RPM Tools and CLI depdencencies
-    curl python-devel python-pip make rpm-build createrepo && \
+    createrepo \
+    curl \
+    make \
+    python-devel \
+    python-pip \
+    rpm-build && \
     dnf clean all
 
 # Install AWS/ECS CLI Tools
